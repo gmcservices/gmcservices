@@ -17,15 +17,16 @@ import {
   House,
 } from '@mui/icons-material'
 
+import Boxes from '../assets/kadarius-seegars-DevJkLB3hWE-unsplash.jpg'
+
 const items = [
   {
     icon: <House />,
     title: 'Residential Moves',
     description:
       'Let us know square footage, number of rooms, and any special requirements you may have.',
-    imageLight:
-      'url("/static/images/templates/templates-images/dash-light.png")',
-    imageDark: 'url("/static/images/templates/templates-images/dash-dark.png")',
+    imageLight: `url(${Boxes})`,
+    imageDark: `url(${Boxes})`,
   },
   {
     icon: <Business />,
@@ -144,7 +145,7 @@ export default function Services() {
                     : items[selectedItemIndex].imageDark,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                minHeight: 280,
+                maxHeight: 280,
               }}
             />
             <Box sx={{ px: 2, pb: 2 }}>
@@ -162,7 +163,7 @@ export default function Services() {
               >
                 {selectedFeature.description}
               </Typography>
-              <Link
+              {/* <Link
                 color='primary'
                 variant='body2'
                 fontWeight='bold'
@@ -178,7 +179,7 @@ export default function Services() {
                   fontSize='small'
                   sx={{ mt: '1px', ml: '2px' }}
                 />
-              </Link>
+              </Link> */}
             </Box>
           </Box>
           <Stack
@@ -255,7 +256,7 @@ export default function Services() {
                     >
                       {description}
                     </Typography>
-                    <Link
+                    {/* <Link
                       color='primary'
                       variant='body2'
                       fontWeight='bold'
@@ -274,7 +275,7 @@ export default function Services() {
                         fontSize='small'
                         sx={{ mt: '1px', ml: '2px' }}
                       />
-                    </Link>
+                    </Link> */}
                   </Box>
                 </Box>
               </Card>

@@ -1,20 +1,20 @@
 import * as React from 'react'
 import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
-import IconButton from '@mui/material/IconButton'
+// import IconButton from '@mui/material/IconButton'
 import Link from '@mui/material/Link'
-import Stack from '@mui/material/Stack'
+// import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 
-import FacebookIcon from '@mui/icons-material/GitHub'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import TwitterIcon from '@mui/icons-material/X'
+// import FacebookIcon from '@mui/icons-material/GitHub'
+// import LinkedInIcon from '@mui/icons-material/LinkedIn'
+// import TwitterIcon from '@mui/icons-material/X'
 
 function Copyright() {
   return (
     <Typography variant='body2' color='text.secondary' mt={1}>
       {'Copyright © '}
-      <Link href='/'>GMC&nbsp;</Link>
+      <Link href='/'>GMC, LLC&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   )
@@ -51,7 +51,7 @@ export default function Footer() {
           <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
             <Box sx={{ ml: '-15px' }}>
               <Typography variant='h3' fontWeight={600} gutterBottom>
-                General Moving Contractors LLC
+                General Moving Contractors, LLC
               </Typography>
               <Typography variant='body' color='text.secondary' mb={2}>
                 South Florida based moving services for residential and
@@ -184,7 +184,7 @@ export default function Footer() {
           </Link>
           <Copyright />
         </div>
-        <Stack
+        {/* <Stack
           direction='row'
           justifyContent='left'
           spacing={1}
@@ -217,7 +217,7 @@ export default function Footer() {
           >
             <LinkedInIcon />
           </IconButton>
-        </Stack>
+        </Stack> */}
       </Box>
     </Container>
   )

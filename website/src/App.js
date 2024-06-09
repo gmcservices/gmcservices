@@ -27,12 +27,12 @@ function App() {
       <AppAppBar mode={mode} toggleColorMode={toggleColorMode} />
       <Hero />
       <Box sx={{ bgcolor: 'background.default' }}>
-        <LogoCollection />
+        {/* <LogoCollection /> */}
         <Services />
         <Divider />
-        <Testimonials />
-        <Divider />
         <AboutUs />
+        <Divider />
+        <Testimonials />
         <Divider />
         {/* <Pricing /> */}
         <Quote />

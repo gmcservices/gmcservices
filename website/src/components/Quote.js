@@ -34,7 +34,12 @@ export default function Quote() {
   const onSubmit = () => {
     const url = `${GOOGLE_FORM_URL}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&services=${encodeURIComponent(services.join(', '))}&sqft=${encodeURIComponent(sqft)}&inventory=${encodeURIComponent(inventory)}`
     setLoading(true)
-    fetch(url)
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
       .then((response) => response.text())
       .then((data) => {
         console.log(data)
@@ -64,7 +69,7 @@ export default function Quote() {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: { xs: 3, sm: 6 },
+          gap: { xs: 1, sm: 2 },
         }}
       >
         <Box
@@ -76,6 +81,7 @@ export default function Quote() {
           <Typography component='h2' variant='h4'>
             Quote within 24 hours
           </Typography>
+          <br />
           <Typography
             variant='body1'
             sx={{ color: 'grey.100', alignItems: 'center' }}
@@ -84,113 +90,17 @@ export default function Quote() {
             an accurate quote.
           </Typography>
         </Box>
-        {error ? (
-          <>
-            <Typography
-              component='h2'
-              variant='h4'
-              sx={{ alignItems: 'center' }}
-            >
-              Sorry, there was an error submitting your quote
-            </Typography>
-            <Button onClick={() => setSuccess(false)} variant='contained'>
-              Contact us directly
-            </Button>
-          </>
-        ) : success ? (
-          <>
-            <Typography
-              component='h2'
-              variant='h4'
-              sx={{ alignItems: 'center' }}
-            >
-              Your quote has been submitted
-            </Typography>
-            <Button onClick={() => setSuccess(false)} variant='contained'>
-              Submit another quote
-            </Button>
-          </>
-        ) : (
-          <Container sx={{ display: 'flex', flexDirection: 'row', gap: 1 }}>
-            <Container
-              sx={{
-                position: 'relative',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: { xs: 1, sm: 2 },
-              }}
-            >
-              <FormControl variant='standard'>
-                <InputLabel htmlFor='nameField'>Name</InputLabel>
-                <OutlinedInput
-                  id='nameField'
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder='John Smith'
-                />
-              </FormControl>
-
-              <FormControl variant='standard'>
-                <InputLabel htmlFor='emailField'>Email</InputLabel>
-                <OutlinedInput
-                  id='emailField'
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder='your_email@gmail.com'
-                />
-              </FormControl>
-              <FormControl variant='standard'>
-                <InputLabel htmlFor='phoneField'>Phone</InputLabel>
-                <OutlinedInput
-                  id='phoneField'
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                  placeholder='(305) 123-4567'
-                />
-              </FormControl>
-              <FormGroup>
-                <InputLabel>
-                  What type of moving services do you need?
-                </InputLabel>
-                {SERVICE_OPTIONS.map((service) => (
-                  <FormControlLabel
-                    control={
-                      <Checkbox defaultChecked={services.includes(service)} />
-                    }
-                    label={service}
-                    key={service}
-                    onChange={(e) => setServices([...services, service])}
-                  />
-                ))}
-              </FormGroup>
-              <FormControl variant='standard'>
-                <InputLabel htmlFor='sqftField'>
-                  Approx. Square footage
-                </InputLabel>
-                <OutlinedInput
-                  id='sqftField'
-                  placeholder='1000 sqft'
-                  value={sqft}
-                  onChange={(e) => setSqft(e.target.value)}
-                />
-              </FormControl>
-              <FormControl variant='standard'>
-                <InputLabel htmlFor='inventoryField'>Inventory</InputLabel>
-                <OutlinedInput
-                  id='inventoryField'
-                  multiline
-                  rows={4}
-                  placeholder='Please provide a detailed description of your project.'
-                  value={inventory}
-                  onChange={(e) => setInventory(e.target.value)}
-                />
-              </FormControl>
-              <Button variant='contained' color='primary' onClick={onSubmit}>
-                {loading ? 'Loading...' : 'Submit'}
-              </Button>
-            </Container>
-          </Container>
-        )}
+        <iframe
+          src='https://docs.google.com/forms/d/e/1FAIpQLSfzBuxOp2Rju-MweSDadM1CnyZ_kBDUMs82d-goKhZ43ED-ug/viewform?embedded=true'
+          width='100%'
+          height='1330'
+          frameborder='0'
+          marginHeight='0'
+          marginWidth='0'
+          title='google-form'
+        >
+          Loading…
+        </iframe>
       </Container>
     </Box>
   )

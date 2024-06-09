@@ -1,22 +1,40 @@
-import * as React from 'react'
+import React, { useCallback } from 'react'
 import { alpha } from '@mui/material'
 import Box from '@mui/material/Box'
 import Button from '@mui/material/Button'
 import Container from '@mui/material/Container'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
+import { scrollToSectionElement } from './utils'
+
+import MovingTruck from '../assets/maxim-tolchinskiy-crHhZlES310-unsplash.jpg'
+
+const CTA = {
+  title: 'Get a Quote',
+  id: 'quote',
+}
 
 export default function Hero() {
+  const onCTAClick = useCallback(() => {
+    scrollToSectionElement(CTA.id)
+  }, [])
+
   return (
     <Box
       id='hero'
       sx={(theme) => ({
         width: '100%',
-        backgroundImage:
-          theme.palette.mode === 'light'
-            ? 'linear-gradient(180deg, #CEE5FD, #FFF)'
-            : `linear-gradient(#02294F, ${alpha('#090E10', 0.0)})`,
-        backgroundSize: '100% 20%',
+        backgroundImage: `
+          linear-gradient(
+            to bottom,
+            ${alpha(theme.palette.primary.main, 0.8)},
+            ${alpha(theme.palette.primary.main, 0.2)}
+          ),
+          url(${MovingTruck})`,
+
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+
         backgroundRepeat: 'no-repeat',
       })}
     >
@@ -71,8 +89,8 @@ export default function Hero() {
             useFlexGap
             sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
           >
-            <Button variant='contained' color='primary'>
-              Get a quote in 24 hours
+            <Button variant='contained' color='primary' onClick={onCTAClick}>
+              {CTA.title}
             </Button>
           </Stack>
         </Stack>

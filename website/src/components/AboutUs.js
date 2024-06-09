@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography'
 export default function AboutUs() {
   return (
     <Box
-      id='highlights'
+      id='about'
       sx={{
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },

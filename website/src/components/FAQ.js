@@ -114,32 +114,10 @@ export default function FAQ() {
               the state of Florida. Our insurance coverage includes general
               liability, cargo, and workers' compensation. You can rest assured
               that your belongings are protected during the moving process.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion
-          expanded={expanded === 'panel4'}
-          onChange={handleChange('panel4')}
-        >
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls='panel4d-content'
-            id='panel4d-header'
-          >
-            <Typography component='h3' variant='subtitle2'>
-              Is there a warranty on the product, and what does it cover?
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography
-              variant='body2'
-              gutterBottom
-              sx={{ maxWidth: { sm: '100%', md: '70%' } }}
-            >
-              Yes, our product comes with a [length of warranty] warranty. It
-              covers defects in materials and workmanship. If you encounter any
-              issues covered by the warranty, please contact our customer
-              support for assistance.
+              <br />
+              <br />
+              If your moving job requires a COI (Certificate of Insurance), we
+              can provide one upon request after booking your moving services.
             </Typography>
           </AccordionDetails>
         </Accordion>

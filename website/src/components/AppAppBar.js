@@ -13,6 +13,7 @@ import Drawer from '@mui/material/Drawer'
 import MenuIcon from '@mui/icons-material/Menu'
 import ToggleColorMode from './ToggleColorMode'
 import { Logo } from './styled'
+import { scrollToSectionElement } from './utils'
 
 const SECTIONS = [
   {
@@ -20,12 +21,12 @@ const SECTIONS = [
     id: 'services',
   },
   {
-    title: 'Testimonials',
-    id: 'testimonials',
+    title: 'About Us',
+    id: 'about',
   },
   {
-    title: 'About Us',
-    id: 'highlights',
+    title: 'Testimonials',
+    id: 'testimonials',
   },
   {
     title: 'Quote',
@@ -50,17 +51,12 @@ function AppAppBar({ mode, toggleColorMode }) {
   }
 
   const scrollToSection = (sectionId) => {
-    const sectionElement = document.getElementById(sectionId)
-    const offset = 128
-    if (sectionElement) {
-      const targetScroll = sectionElement.offsetTop - offset
-      sectionElement.scrollIntoView({ behavior: 'smooth' })
-      window.scrollTo({
-        top: targetScroll,
-        behavior: 'smooth',
-      })
-      setOpen(false)
-    }
+    scrollToSectionElement(sectionId)
+    setOpen(false)
+  }
+
+  const onCTAClick = () => {
+    scrollToSectionElement(CTA.id)
   }
 
   return (
@@ -136,9 +132,7 @@ function AppAppBar({ mode, toggleColorMode }) {
                 color='primary'
                 variant='contained'
                 size='small'
-                component='a'
-                href='/material-ui/getting-started/templates/sign-up/'
-                target='_blank'
+                onClick={onCTAClick}
               >
                 {CTA.title}
               </Button>
@@ -188,10 +182,8 @@ function AppAppBar({ mode, toggleColorMode }) {
                     <Button
                       color='primary'
                       variant='contained'
-                      component='a'
-                      href='/material-ui/getting-started/templates/sign-up/'
-                      target='_blank'
                       sx={{ width: '100%' }}
+                      onClick={onCTAClick}
                     >
                       {CTA.title}
                     </Button>
