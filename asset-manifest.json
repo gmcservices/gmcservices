@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "/gmcservices/static/css/main.e6c13ad2.css",
-    "main.js": "/gmcservices/static/js/main.da3685e1.js",
+    "main.js": "/gmcservices/static/js/main.b5a9f83b.js",
     "static/js/453.b03e3c98.chunk.js": "/gmcservices/static/js/453.b03e3c98.chunk.js",
+    "static/media/maxim-tolchinskiy-crHhZlES310-unsplash.jpg": "/gmcservices/static/media/maxim-tolchinskiy-crHhZlES310-unsplash.823fb17d37c0edc7ca89.jpg",
+    "static/media/kadarius-seegars-DevJkLB3hWE-unsplash.jpg": "/gmcservices/static/media/kadarius-seegars-DevJkLB3hWE-unsplash.0e819a0e565c3463922e.jpg",
     "index.html": "/gmcservices/index.html",
     "main.e6c13ad2.css.map": "/gmcservices/static/css/main.e6c13ad2.css.map",
-    "main.da3685e1.js.map": "/gmcservices/static/js/main.da3685e1.js.map",
+    "main.b5a9f83b.js.map": "/gmcservices/static/js/main.b5a9f83b.js.map",
     "453.b03e3c98.chunk.js.map": "/gmcservices/static/js/453.b03e3c98.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.da3685e1.js"
+    "static/js/main.b5a9f83b.js"
   ]
 }
