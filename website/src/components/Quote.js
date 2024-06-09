@@ -29,10 +29,9 @@ export default function Quote() {
 
   const [loading, setLoading] = React.useState(false)
   const [error, setError] = React.useState(null)
-  const [success, setSuccess] = React.useState(true)
+  const [success, setSuccess] = React.useState(false)
 
   const onSubmit = () => {
-    // Submit form using google prefilled link
     const url = `${GOOGLE_FORM_URL}?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}&services=${encodeURIComponent(services.join(', '))}&sqft=${encodeURIComponent(sqft)}&inventory=${encodeURIComponent(inventory)}`
     setLoading(true)
     fetch(url)
